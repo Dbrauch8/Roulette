@@ -15,14 +15,14 @@ namespace Roulette
 
     class Program
     {
-        static Random rnd = new Random();
         static void Main(string[] args)
         {
+            Random rnd = new Random();
             Console.WriteLine("Welcome to the Roulette table!");
             Console.WriteLine("Press any key to place a bet.");
             Console.ReadLine();
 
-            Roll[] rolls = new Roll[37];
+            Roll[] rolls = new Roll[38];
             rolls[0] = new Roll { number = "3", color = "red", oddEven = "odd" };
             rolls[1] = new Roll { number = "6", color = "black", oddEven = "even" };
             rolls[2] = new Roll { number = "9", color = "red", oddEven = "odd" };
@@ -62,8 +62,12 @@ namespace Roulette
             rolls[36] = new Roll { number = "0", color = "Green", oddEven = "NA" };
             rolls[37] = new Roll { number = "00", color = "Green", oddEven = "NA" };
 
-            for()
-            Console.WriteLine(rolls[rnd.Next(0, 37)]);
+            int r = rnd.Next(0, 38);
+            Console.WriteLine($"The number {rolls[r].number} is the winning number!\nOther wins include color: {rolls[r].color}, {rolls[r].oddEven} numbers");
+            
+            //Console.WriteLine(rolls[r].color);
+            //Console.WriteLine(rolls[r].oddEven);
+            Console.ReadLine();
 
             //    int[,] myArray = new int[,]
             //{
