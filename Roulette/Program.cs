@@ -20,7 +20,11 @@ namespace Roulette
             Random rnd = new Random();
             Console.WriteLine("Welcome to the Roulette table!");
             Console.WriteLine("Press any key to place a bet.");
+            Console.Write("Place your bet (min $5): ");
+            double bet = double.Parse(Console.ReadLine());
+            Console.WriteLine("Press any key to spin the wheel!");
             Console.ReadLine();
+           
 
             Roll[] rolls = new Roll[38];
             rolls[0] = new Roll { number = "3", color = "red", oddEven = "odd" };
@@ -63,29 +67,29 @@ namespace Roulette
             rolls[37] = new Roll { number = "00", color = "Green", oddEven = "NA" };
 
             int r = rnd.Next(0, 38);
-            Console.WriteLine($"The number {rolls[r].number} is the winning number!\nOther wins include color: {rolls[r].color}, {rolls[r].oddEven} numbers");
-            
-            //Console.WriteLine(rolls[r].color);
-            //Console.WriteLine(rolls[r].oddEven);
-            Console.ReadLine();
+            int x = int.Parse(rolls[r].number);
 
-            //    int[,] myArray = new int[,]
-            //{
-            //    {3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36},
-            //    {2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35},
-            //    {1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34}
-            //};
-            //    Test(myArray);
-            //}
-            //static void Test(int[,] myArray)
-            //{
-            //    Console.WriteLine(myArray[rnd.Next(0, 2), rnd.Next(0, 11)]);
-            //}
-            //int[] oneArray = new int[] 
-            //{3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36,
-            // 2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35,
-            // 1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34
-            //};
-        }
+            if (r >= 36)
+            {
+                Console.WriteLine($"The winning bet is {rolls[r].number}.");
+            }
+            else 
+            {
+                Console.WriteLine($"{rolls[r].number} is the winning number! Other wins include\ncolor: {rolls[r].color} \nEven/Odd: {rolls[r].oddEven}");
+            }
+            if ( > )
+            }
+            
+                Console.ReadLine();
+            //side,corner bets
+            int[,] myArray = new int[,]
+        {
+                {3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36},
+                {2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35},
+                {1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34}
+        };
+            //side bets
+            if 
+        }    
     }
 }
