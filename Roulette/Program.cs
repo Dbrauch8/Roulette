@@ -88,8 +88,9 @@ namespace Roulette
                 Console.WriteLine($"{rolls[r].number} is the winning number! \n\nOther wins include\ncolor: {rolls[r].color} \nEven/Odd: {rolls[r].oddEven}");
             }
             
+/*
+            //HighLow(x)// High/Low winner determination
 
-            HighLow(x);// High/Low winner determination
 
             Console.ReadLine();
             //side,corner bets
@@ -102,7 +103,12 @@ namespace Roulette
             
                 foreach (int i in myArray)
                 {
-                if ()
+                int x;
+                int y;
+                if ([x,y] == [0,0])
+                {
+
+                }
 
             }
                 Console.WriteLine("Winner Dozen");
@@ -122,7 +128,7 @@ namespace Roulette
             else if (x > 18 && x <= 36)
             {
                 Console.WriteLine("High/Low: High range win!");
-            }
+            }*/
         }
     }
 }
