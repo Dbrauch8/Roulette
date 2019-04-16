@@ -23,6 +23,8 @@ namespace Roulette
             Console.ReadLine();
 
             Random rnd = new Random();
+
+
             /*
             Console.WriteLine("Welcome to the Roulette table!");
             Console.WriteLine("Press any key to place a bet.");
