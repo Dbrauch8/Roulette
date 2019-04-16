@@ -78,9 +78,6 @@ namespace Roulette
 
             int r = rnd.Next(0, 22);
             int x = int.Parse(rolls[r].number);
-            Console.WriteLine(r);
-            Console.WriteLine(x);
-
 
             if (r >= 36)
             {
@@ -92,7 +89,7 @@ namespace Roulette
             }
 
             Dozens(x);
-
+            Streets(r);
 
             //Splits and Corners
             if (r == 0)
@@ -144,65 +141,9 @@ namespace Roulette
                     $"\nWinning corner bets are {rolls[r - 1].number}, {rolls[r - 13].number} and {rolls[r - 12].number}");
             }
 
-                Console.ReadLine();
+            Console.ReadLine();
         }
 
-
-            //WinningRows(rolls, r);
-
-
-
-            //side,corner bets
-            //    int[,] myArray = new int[,]
-            //{
-            //                    {3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36},
-            //                    {2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35},
-            //                    {1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34}
-            //};
-
-
-        //    private static void WinningRows(Roll[] rolls, int r)
-        //    {
-        //        public static int FindIndex<T>(T[] rolls, int 0, r)
-
-        //          < indexOf = Array.IndexOf(rolls, r);
-        //    Console.WriteLine(indexOf);
-
-        //    if (indexOf <= 11)
-        //    {
-        //        Console.WriteLine("Winner row one!");
-
-        //        if (indexOf == 0)
-        //        {
-        //            Console.WriteLine($"Split Winner {indexOf + 1}, {indexOf + 12} " +
-        //                $"\nCorner Winners {indexOf + 1}, {indexOf + 12} and {indexOf + 13}");
-        //        }
-
-        //        else if (indexOf > 0 && indexOf > 11)
-        //        {
-        //            Console.WriteLine($"Split winners {indexOf - 1}, {indexOf + 1} and {indexOf + 12}" +
-        //                $"\nCorner Winners {indexOf + 1}, {indexOf + 12} and {indexOf + 11}, {indexOf + 12} and {indexOf + 13}");
-        //        }
-        //        else if (indexOf == 11)
-        //        {
-        //            Console.WriteLine($"split winner {indexOf - 1} and {indexOf + 12}" +
-        //                 $"\nCorner Winners {indexOf - 1}, {indexOf + 11} and {indexOf + 12}");
-        //        }
-        //        else
-        //        { }
-        //    }
-
-
-        //    else if (indexOf > 11 && indexOf <= 23)
-        //    {
-        //        Console.WriteLine("Winner row two!");
-        //    }
-        //    else if (indexOf > 23 && indexOf <= 36)
-        //    {
-        //        Console.WriteLine("Winner row three!");
-        //    }
-        //    else { }
-        //}
 
         private static void Dozens(int x)
         {
@@ -219,14 +160,25 @@ namespace Roulette
                 Console.WriteLine("Winner third dozen");
             }
             else { }
-            Console.ReadLine();
+
+        }
+        private static void Streets(int r)
+        {
+            if (r <= 11)
+            {
+                Console.WriteLine("Winner row 1 (1-12)");
+            }
+            else if (r > 11 && r < 22)
+            {
+                Console.WriteLine("Winner row 2 (13-24)");
+            }
+            else if (r > 22 && r > 34)
+            {
+                Console.WriteLine("Winner row 3 (25-36)");
+            }
+            else { }
+
         }
     }
 }
-
-
-      
-            //var r = 7;
-            //var nx = r / 3;
-            //var ny = r % 3;
 
