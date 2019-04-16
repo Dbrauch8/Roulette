@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
+//Get to work
 namespace Roulette
 {
     public struct Roll
