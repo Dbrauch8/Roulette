@@ -19,11 +19,11 @@ namespace Roulette
             int[] chance = new int[38] { 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36,
             2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35, 1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34, 0, 00};
 
-            int r = 0; //rnd.Next(0, 37);
+            int r = rnd.Next(0, 37);
             int x = (chance[r]);
-            Console.WriteLine(r);
-            Console.WriteLine(x);
-            Console.ReadLine();
+            //Console.WriteLine(r);
+            //Console.WriteLine(x);
+            //Console.ReadLine();
             Console.WriteLine($"The winning number is {x}!");
 
             evenOrOdd(x);
@@ -150,77 +150,66 @@ namespace Roulette
 
         public void streetRowSwitch(int x)
         {
-           
             switch (x)
             {
-                case var i when(i >= 1 && i <= 3):
+                case var i when(i >= 1 && i <= 3)://good
                     
                     {
                         Console.WriteLine("street 1 winner!");
                     }
                     break;
-                case 2:
-                    if (x >= 4 && x <= 6)
+                case var i when (i >= 4 && i <= 6)://good
                     {
                         Console.WriteLine("street 2 winner!");
                     }
                     break;
-                case 3:
-                    if (x >= 7 && x <= 9)
+                case var i when (i >= 7 && i <= 9)://good
                     {
                         Console.WriteLine("street 3 winner!");
                     }
                     break;
-                case 4:
-                    if (x >= 10 && x <= 12)
+                    case var i when(i >= 10 && i <= 12)://good
                     {
                         Console.WriteLine("street 4 winner!");
                     }
                     break;
-                case 5:
-                    if (x >= 13 && x <= 15)
+                case var i when (i >= 13 && i <= 15)://good
                     {
                         Console.WriteLine("street 5 winner!");
                     }
                     break;
-                case 6:
-                    if (x >= 16 && x <= 18)
+                case var i when (i >= 16 && i <= 18)://good
                     {
                         Console.WriteLine("street 6 winner!");
                     }
                     break;
-                case 7:
-                    if (x >= 19 && x <= 21)
+               case var i when (i >= 19 && i <= 21)://good
                     {
                         Console.WriteLine("street 7 winner!");
                     }
                     break;
-                case 8:
-                    if (x >= 22 && x <= 24)
+                case var i when (i >= 22 && i <= 24)://good
                     {
                         Console.WriteLine("street 8 winner!");
                     }
                     break;
-                case 9:
+                case var i when (i >= 25 && i <= 27)://good
                     if (x >= 25 && x <= 27)
                     {
                         Console.WriteLine("street 9 winner!");
                     }
                     break;
-                case 10:
-                    if (x >= 28 && x <= 30)
+                case var i when (i >= 28 && i <= 30)://good
                     {
                         Console.WriteLine("street 10 winner!");
                     }
                     break;
-                case 11:
-                    if (x >= 31 && x <= 33)
+                case var i when (i >= 31 && i <= 33)://good
                     {
                         Console.WriteLine("street 11 winner!");
                     }
                     break;
-                case 12:
-                    if (x >= 34 && x <= 36)
+                case var i when (i >= 34 && i <= 36)://good
                     {
                         Console.WriteLine("street 12 winner!");
                     }
@@ -239,7 +228,7 @@ namespace Roulette
             }
             else
             {
-                Console.WriteLine("Winner column 3 (1,3,5..)!");
+                Console.WriteLine("Winner column 3 (1,4,7..)!");
             }
 
         }
