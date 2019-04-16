@@ -15,7 +15,6 @@ namespace Roulette
             finger.doWork();
             Console.ReadLine();
 
-            Random rnd = new Random();
         }
 
     }

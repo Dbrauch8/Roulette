@@ -21,9 +21,6 @@ namespace Roulette
 
             int r = rnd.Next(0, 37);
             int x = (chance[r]);
-            //Console.WriteLine(r);
-            //Console.WriteLine(x);
-            //Console.ReadLine();
             Console.WriteLine($"The winning number is {x}!");
 
             evenOrOdd(x);
@@ -104,63 +101,63 @@ namespace Roulette
         {
             switch (x)
             {
-                case var i when(i >= 1 && i <= 3)://good
+                case var i when(i >= 1 && i <= 3):
                     
                     {
                         Console.WriteLine("street 1 winner!");
                         Console.WriteLine("Winner double row 1-2.");
                     }
                     break;
-                case var i when (i >= 4 && i <= 6)://good
+                case var i when (i >= 4 && i <= 6):
                     {
                         Console.WriteLine("street 2 winner!");
                         Console.WriteLine("Winner double row 1-2.");
                         Console.WriteLine("Winner double row 2-3.");
                     }
                     break;
-                case var i when (i >= 7 && i <= 9)://good
+                case var i when (i >= 7 && i <= 9):
                     {
                         Console.WriteLine("street 3 winner!");
                         Console.WriteLine("Winner double row 2-3.");
                         Console.WriteLine("Winner double row 3-4.");
                     }
                     break;
-                    case var i when(i >= 10 && i <= 12)://good
+                    case var i when(i >= 10 && i <= 12):
                     {
                         Console.WriteLine("street 4 winner!");
                         Console.WriteLine("Winner double row 3-4.");
                         Console.WriteLine("Winner double row 4-5.");
                     }
                     break;
-                case var i when (i >= 13 && i <= 15)://good
+                case var i when (i >= 13 && i <= 15):
                     {
                         Console.WriteLine("street 5 winner!");
                         Console.WriteLine("Winner double row 4-5.");
                         Console.WriteLine("Winner double row 5-6.");
                     }
                     break;
-                case var i when (i >= 16 && i <= 18)://good
+                case var i when (i >= 16 && i <= 18):
                     {
                         Console.WriteLine("street 6 winner!");
                         Console.WriteLine("Winner double row 5-6.");
                         Console.WriteLine("Winner double row 6-7.");
                     }
                     break;
-               case var i when (i >= 19 && i <= 21)://good
+               case var i when (i >= 19 && i <= 21):
                     {
                         Console.WriteLine("street 7 winner!");
                         Console.WriteLine("Winner double row 6-7.");
                         Console.WriteLine("Winner double row 7-8.");
                     }
                     break;
-                case var i when (i >= 22 && i <= 24)://good
+                case var i when (i >= 22 && i <= 24):
                     {
                         Console.WriteLine("street 8 winner!");
                         Console.WriteLine("Winner double row 7-8.");
                         Console.WriteLine("Winner double row 8-9.");
                     }
                     break;
-                case var i when (i >= 25 && i <= 27)://good
+                case var i when (i >= 25 && i <= 27):
                     if (x >= 25 && x <= 27)
                     {
                         Console.WriteLine("street 9 winner!");
@@ -168,21 +165,21 @@ namespace Roulette
                         Console.WriteLine("Winner double row 9-10.");
                     }
                     break;
-                case var i when (i >= 28 && i <= 30)://good
+                case var i when (i >= 28 && i <= 30):
                     {
                         Console.WriteLine("street 10 winner!");
                         Console.WriteLine("Winner double row 9-10.");
                         Console.WriteLine("Winner double row 10-11.");
                     }
                     break;
-                case var i when (i >= 31 && i <= 33)://good
+                case var i when (i >= 31 && i <= 33):
                     {
                         Console.WriteLine("street 11 winner!");
                         Console.WriteLine("Winner double row 10-11.");
                         Console.WriteLine("Winner double row 11-12.");
                     }
                     break;
-                case var i when (i >= 34 && i <= 36)://good
+                case var i when (i >= 34 && i <= 36):
                     {
                         Console.WriteLine("street 12 winner!");
                         Console.WriteLine("Winner double row 11-12.");
