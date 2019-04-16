@@ -18,7 +18,12 @@ namespace Roulette
     {
         static void Main(string[] args)
         {
+            CrossingFingers finger = new CrossingFingers();
+            finger.doWork();
+            Console.ReadLine();
+
             Random rnd = new Random();
+            /*
             Console.WriteLine("Welcome to the Roulette table!");
             Console.WriteLine("Press any key to place a bet.");
             Console.Write("Place your bet (min $5): ");
@@ -26,7 +31,6 @@ namespace Roulette
             Console.WriteLine("Press any key to spin the wheel!");
             Console.ReadLine();
             Console.Clear();
-
             Roll[] rolls = new Roll[38];
             rolls[0] = new Roll { number = "3", color = "red", oddEven = "odd" };
             rolls[1] = new Roll { number = "6", color = "black", oddEven = "even" };
@@ -76,7 +80,7 @@ namespace Roulette
             rolls[36] = new Roll { number = "0", color = "Green", oddEven = "NA" };
             rolls[37] = new Roll { number = "00", color = "Green", oddEven = "NA" };
 
-            int r = rnd.Next(0, 22);
+            int r = rnd.Next(0, 37);
             int x = int.Parse(rolls[r].number);
 
             if (r >= 36)
@@ -177,8 +181,10 @@ namespace Roulette
                 Console.WriteLine("Winner row 3 (25-36)");
             }
             else { }
+            */
 
         }
+
     }
 }
 

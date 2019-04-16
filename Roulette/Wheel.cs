@@ -8,7 +8,7 @@ namespace Roulette
 {
     class Wheel
     {
-        Random rand = new Random();
+       
 
         int[,] myArray = new int[,]
         {
