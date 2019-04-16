@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Roulette
 {
     public struct Roll
-        {
+    {
         public string number;
         public string color;
         public string oddEven;
-        }
+    }
 
     class Program
     {
@@ -25,7 +26,7 @@ namespace Roulette
             Console.WriteLine("Press any key to spin the wheel!");
             Console.ReadLine();
             Console.Clear();
-            
+
             Roll[] rolls = new Roll[38];
             rolls[0] = new Roll { number = "3", color = "red", oddEven = "odd" };
             rolls[1] = new Roll { number = "6", color = "black", oddEven = "even" };
@@ -75,60 +76,157 @@ namespace Roulette
             rolls[36] = new Roll { number = "0", color = "Green", oddEven = "NA" };
             rolls[37] = new Roll { number = "00", color = "Green", oddEven = "NA" };
 
-            int r = rnd.Next(0, 38);
+            int r = rnd.Next(0, 22);
             int x = int.Parse(rolls[r].number);
+            Console.WriteLine(r);
+            Console.WriteLine(x);
 
-       
+
             if (r >= 36)
             {
                 Console.WriteLine($"The winning bet is {rolls[r].number}.");
             }
             else
             {
-                Console.WriteLine($"{rolls[r].number} is the winning number! \n\nOther wins include\ncolor: {rolls[r].color} \nEven/Odd: {rolls[r].oddEven}");
+                Console.WriteLine($"{rolls[r].number} is the winning number! \nWinning color: {rolls[r].color} \nWinner Even/Odd: {rolls[r].oddEven}");
             }
-            
-/*
-            //HighLow(x)// High/Low winner determination
+
+            Dozens(x);
 
 
-            Console.ReadLine();
+            //Splits and Corners
+            if (r == 0)
+            {
+                Console.WriteLine($"Winning split bets are {rolls[1].number} and {rolls[12].number}" +
+                    $"\nWinning corner bets are {rolls[2].number}, {rolls[12].number} and {rolls[13].number}");
+            }
+            else if (r > 0 & r < 11)
+            {
+                Console.WriteLine($"winning split bets are {rolls[r - 1].number}, {rolls[r + 1].number} and {rolls[r + 12].number}" +
+                    $"\nWinning corner bets are {rolls[r - 1].number}, {rolls[r + 1].number}, {rolls[r + 11].number}, {rolls[r + 12].number} and {rolls[r + 13].number}");
+            }
+            else if (r == 11)
+            {
+                Console.WriteLine($"Winning split bets are {rolls[r - 1].number} and {rolls[r + 12].number}" +
+                    $"\nWinning corner bets are {rolls[r + 11].number}, {rolls[12].number} and {rolls[13].number}");
+            }
+            else if (r == 12)
+            {
+                Console.WriteLine($"Winning split bets are {rolls[r - 12].number}, {rolls[r + 1].number} and {rolls[r + 12].number}" +
+                    $"\nWinning corner bets are {rolls[r - 12].number}, {rolls[r - 11].number}, {rolls[r + 1].number}, {rolls[r + 12].number} " +
+                    $"and {rolls[r + 13].number}");
+            }
+            else if (r > 12 & r < 22)
+            {
+                Console.WriteLine($"winning split bets are {rolls[r - 1].number}, {rolls[r + 1].number}, {rolls[r - 12].number} and {rolls[r + 12].number}" +
+                    $"\nWinning corner bets are {rolls[r - 13].number},{rolls[r - 12].number}, {rolls[r - 11].number}, {rolls[r - 1].number}, " +
+                    $"{rolls[r + 1].number}, {rolls[r + 11].number}, {rolls[r + 12].number} and {rolls[r + 13].number}");
+            }
+            else if (r == 22)
+            {
+                Console.WriteLine($"Winning split bets are {rolls[r - 12].number}, {rolls[r - 1].number} and {rolls[r + 12].number}" +
+                    $"\nWinning corner bets are {rolls[r - 13].number}, {rolls[r - 12].number} {rolls[r + 11].number}and {rolls[r + 12].number}");
+            }
+            else if (r == 23)
+            {
+                Console.WriteLine($"Winning split bets are {rolls[r - 12].number} and {rolls[r + 12].number}" +
+                       $"\nWinning corner bets are {rolls[r - 12].number}, {rolls[r - 11].number}, and {rolls[r + 1].number}");
+            }
+            else if (r > 23 && r < 33)
+            {
+                Console.WriteLine($"winning split bets are {rolls[r - 1].number}, {rolls[r + 1].number} and {rolls[r - 12].number}" +
+                    $"\nWinning corner bets are {rolls[r - 13].number},{rolls[r - 12].number}, {rolls[r - 11].number}, {rolls[r - 1].number}, " +
+                    $" and {rolls[r + 1].number}");
+            }
+            else if (r == 33)
+            {
+                Console.WriteLine($"winning split bets are {rolls[r - 1].number},  and {rolls[r - 12].number}" +
+                    $"\nWinning corner bets are {rolls[r - 1].number}, {rolls[r - 13].number} and {rolls[r - 12].number}");
+            }
+
+                Console.ReadLine();
+        }
+
+
+            //WinningRows(rolls, r);
+
+
+
             //side,corner bets
-            int[,] myArray = new int[,]
+            //    int[,] myArray = new int[,]
+            //{
+            //                    {3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36},
+            //                    {2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35},
+            //                    {1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34}
+            //};
+
+
+        //    private static void WinningRows(Roll[] rolls, int r)
+        //    {
+        //        public static int FindIndex<T>(T[] rolls, int 0, r)
+
+        //          < indexOf = Array.IndexOf(rolls, r);
+        //    Console.WriteLine(indexOf);
+
+        //    if (indexOf <= 11)
+        //    {
+        //        Console.WriteLine("Winner row one!");
+
+        //        if (indexOf == 0)
+        //        {
+        //            Console.WriteLine($"Split Winner {indexOf + 1}, {indexOf + 12} " +
+        //                $"\nCorner Winners {indexOf + 1}, {indexOf + 12} and {indexOf + 13}");
+        //        }
+
+        //        else if (indexOf > 0 && indexOf > 11)
+        //        {
+        //            Console.WriteLine($"Split winners {indexOf - 1}, {indexOf + 1} and {indexOf + 12}" +
+        //                $"\nCorner Winners {indexOf + 1}, {indexOf + 12} and {indexOf + 11}, {indexOf + 12} and {indexOf + 13}");
+        //        }
+        //        else if (indexOf == 11)
+        //        {
+        //            Console.WriteLine($"split winner {indexOf - 1} and {indexOf + 12}" +
+        //                 $"\nCorner Winners {indexOf - 1}, {indexOf + 11} and {indexOf + 12}");
+        //        }
+        //        else
+        //        { }
+        //    }
+
+
+        //    else if (indexOf > 11 && indexOf <= 23)
+        //    {
+        //        Console.WriteLine("Winner row two!");
+        //    }
+        //    else if (indexOf > 23 && indexOf <= 36)
+        //    {
+        //        Console.WriteLine("Winner row three!");
+        //    }
+        //    else { }
+        //}
+
+        private static void Dozens(int x)
         {
-                {3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36},
-                {2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35},
-                {1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34}
-        };
-            
-                foreach (int i in myArray)
-                {
-                int x;
-                int y;
-                if ([x,y] == [0,0])
-                {
-
-                }
-
-            }
-                Console.WriteLine("Winner Dozen");
-            }
-          
-            }
-            //side bets
-            //if 
-
-        
-        public static void HighLow(int x)
-        {
-            if (x > 0 && x < 19)
+            if (x <= 12)
             {
-                Console.WriteLine("High/Low: Low range win!");
+                Console.WriteLine("Winner first dozen");
             }
-            else if (x > 18 && x <= 36)
+            else if (x > 12 && x < 25)
             {
-                Console.WriteLine("High/Low: High range win!");
-            }*/
+                Console.WriteLine("Winner second dozen");
+            }
+            else if (x > 24 && x <= 36)
+            {
+                Console.WriteLine("Winner third dozen");
+            }
+            else { }
+            Console.ReadLine();
         }
     }
 }
+
+
+      
+            //var r = 7;
+            //var nx = r / 3;
+            //var ny = r % 3;
+
